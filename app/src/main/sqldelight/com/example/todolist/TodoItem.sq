@@ -1,0 +1,21 @@
+CREATE TABLE Todo (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    month_name TEXT NOT NULL,
+    day_number INTEGER NOT NULL,
+    description TEXT NOT NULL,
+    completed INTEGER NOT NULL DEFAULT 0
+);
+
+insertTodo:
+INSERT INTO Todo (month_name, day_number, description)
+VALUES(?, ?, ?);
+
+deleteTodo:
+DELETE
+FROM Todo
+WHERE id = :id;
+
+forDay:
+SELECT *
+FROM Todo
+WHERE month_name = :month_name AND day_number = :day_number;
