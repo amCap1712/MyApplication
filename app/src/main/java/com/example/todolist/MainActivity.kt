@@ -1,7 +1,10 @@
 package com.example.todolist
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todolist.databinding.ActivityMainBinding
 import com.squareup.sqldelight.android.AndroidSqliteDriver
@@ -16,15 +19,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var month: Months
     private var day by Delegates.notNull<Long>()
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        month = Months.valueOf(((intent.extras?.get("month") ?: "a") as String).toUpperCase())
+        month = Months.valueOf(((intent.extras?.get("month") ?: Months.A.name) as String).toUpperCase())
         day = (intent.extras?.get("day") ?: 1L) as Long
 
-        supportActionBar?.title = month.name.toUpperCase() + " - " + day.toString()
+        supportActionBar?.title = day.toString() + " " + month.customName.toUpperCase()
+
+
 
         sqlDriver = AndroidSqliteDriver(Database.Schema, applicationContext, "todo.db")
         database = Database(sqlDriver)
@@ -45,4 +52,5 @@ class MainActivity : AppCompatActivity() {
             todoAdapter.deleteDoneTodos()
         }
     }
+
 }

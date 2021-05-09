@@ -3,19 +3,19 @@ package com.example.todolist
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-enum class Months(val date: LocalDate) {
-    A(LocalDate.of(2021, 5, 15)),
-    B(LocalDate.of(2021, 6, 15)),
-    C(LocalDate.of(2021, 7, 15)),
-    D(LocalDate.of(2021, 8, 15)),
-    E(LocalDate.of(2021, 9, 15)),
-    F(LocalDate.of(2021, 10, 15)),
-    G(LocalDate.of(2021, 11, 15)),
-    H(LocalDate.of(2021, 12, 15)),
-    I(LocalDate.of(2022, 1, 15)),
-    J(LocalDate.of(2022, 2, 15)),
-    K(LocalDate.of(2022, 3, 15)),
-    L(LocalDate.of(2022, 4, 15));
+enum class Months(val customName: String, val date: LocalDate) {
+    A("anandita",LocalDate.of(2021, 5, 15)),
+    B("nidra",LocalDate.of(2021, 6, 15)),
+    C("nvmun-bara", LocalDate.of(2021, 7, 15)),
+    D("plot-uttama",LocalDate.of(2021, 8, 15)),
+    E("mockstock-jayi",LocalDate.of(2021, 9, 15)),
+    F("UN-rupadana",LocalDate.of(2021, 10, 15)),
+    G("engdrama-srjana",LocalDate.of(2021, 11, 15)),
+    H("citibank-jaya",LocalDate.of(2021, 12, 15)),
+    I("sem-anusarana",LocalDate.of(2022, 1, 15)),
+    J("raru-barsiki",LocalDate.of(2022, 2, 15)),
+    K("dodory",LocalDate.of(2022, 3, 15)),
+    L("bhumja",LocalDate.of(2022, 4, 15));
 
     companion object {
         fun next(months: Months): Months = when (months) {

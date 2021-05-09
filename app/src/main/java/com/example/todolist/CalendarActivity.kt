@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Button
 import com.example.todolist.databinding.CalendarBinding
 import java.time.LocalDate
-import java.time.temporal.ChronoUnit
 
 class CalendarActivity : AppCompatActivity() {
     private lateinit var binding: CalendarBinding
@@ -22,12 +21,12 @@ class CalendarActivity : AppCompatActivity() {
 
         binding.Right.setOnClickListener {
             currentMonth = Months.next(currentMonth)
-            binding.Month.text = currentMonth.name
+            binding.Month.text = currentMonth.customName
             updateDays()
         }
         binding.Left.setOnClickListener {
             currentMonth = Months.prev(currentMonth)
-            binding.Month.text = currentMonth.name
+            binding.Month.text = currentMonth.customName
             updateDays()
         }
 
