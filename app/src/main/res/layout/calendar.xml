@@ -9,27 +9,21 @@
     tools:ignore="ExtraText">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
         android:fontFamily="cursive"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/black"
         android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        android:textStyle="bold|italic"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/date1"
@@ -52,12 +46,11 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="220dp"
-        android:layout_marginBottom="348dp"
         android:src="@drawable/panda"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Month" />
 
     <Button
         android:id="@+id/date2"
@@ -718,7 +711,8 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/Right"
@@ -731,6 +725,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Month"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -741,14 +737,15 @@
         android:layout_marginStart="40dp"
         android:layout_marginBottom="568dp"
         android:background="@color/white"
-        android:backgroundTint="#F8F5F5"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="&lt;&lt;"
         android:textSize="18sp"
         app:iconPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Month"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="HardcodedText" />
 
 

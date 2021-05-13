@@ -1,14 +1,12 @@
 package com.example.todolist
 
-import android.graphics.Typeface
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todolist.databinding.ActivityMainBinding
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
+import java.util.*
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
@@ -29,9 +27,7 @@ class MainActivity : AppCompatActivity() {
         month = Months.valueOf(((intent.extras?.get("month") ?: Months.A.name) as String).toUpperCase())
         day = (intent.extras?.get("day") ?: 1L) as Long
 
-        supportActionBar?.title = day.toString() + " " + month.customName.toUpperCase()
-
-
+        binding.datetext.text = day.toString() + " " + month.customName.toLowerCase(Locale.getDefault())
 
         sqlDriver = AndroidSqliteDriver(Database.Schema, applicationContext, "todo.db")
         database = Database(sqlDriver)

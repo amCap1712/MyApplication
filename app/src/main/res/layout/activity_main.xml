@@ -20,24 +20,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.appcompat.widget.Toolbar
+    <TextView
         android:id="@+id/datetext"
-        android:layout_width="match_parent"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="cursive"
+        android:textAlignment="viewEnd"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp"
-        />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/etToDoTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
         android:hint="Enter Todo Title"
+        android:textColor="@color/cardview_dark_background"
         android:textColorHint="@color/cardview_dark_background"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/cardview_dark_background"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnAddTodo"
